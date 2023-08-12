@@ -11,6 +11,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 /**
  * 全局异常处理
+ *
  * @author chaosssock
  * @date 2023/8/1 19:45
  */
@@ -20,19 +21,14 @@ import java.sql.SQLIntegrityConstraintViolationException;
 public class GlobalExceptionHandler {
     /**
      * 异常处理方法
+     *
      * @param ex
      * @return
      */
-    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public R<String> exceptionHandler(SQLIntegrityConstraintViolationException ex){
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException ex) {
         log.error(ex.getMessage());
 
-        if (ex.getMessage().contains("Duplicate entry")){
-            String[] split = ex.getMessage().split(" ");
-            String msg = split[2] + "已存在";
-            return R.error(msg);
-        }
-
-        return R.error("未知错误");
+        return R.error(ex.getMessage());
     }
 }
