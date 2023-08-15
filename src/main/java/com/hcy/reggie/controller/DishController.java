@@ -50,6 +50,13 @@ public class DishController {
         return R.success("新增菜品成功");
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
     @GetMapping("/page")
     public R<Page> page(int page, int pageSize, String name) {
         //构造分页构造器
