@@ -74,6 +74,26 @@
             <version>1.1.23</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <!-- go to https://search.maven.org/search?q=tencentcloud-sdk-java and get the latest version. -->
+            <!-- 请到https://search.maven.org/search?q=tencentcloud-sdk-java查询所有版本，最新版本如下 -->
+            <version>3.1.831</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.5.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
