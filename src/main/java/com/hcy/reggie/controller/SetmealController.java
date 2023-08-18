@@ -76,14 +76,14 @@ public class SetmealController {
         BeanUtils.copyProperties(pageInfo, dtoPage, "records");
         List<Setmeal> records = pageInfo.getRecords();
 
-        List<SetmealDto> list = records.stream().map((item)->{
+        List<SetmealDto> list = records.stream().map((item) -> {
             SetmealDto setmealDto = new SetmealDto();
-            BeanUtils.copyProperties(item,setmealDto);
+            BeanUtils.copyProperties(item, setmealDto);
             //分类id
             Long categoryId = item.getCategoryId();
             //根据分类id查询分类对象
             Category category = categoryService.getById(categoryId);
-            if (category!=null){
+            if (category != null) {
                 //分类名称
                 String categoryName = category.getName();
                 setmealDto.setCategoryName(categoryName);
@@ -97,10 +97,21 @@ public class SetmealController {
     }
 
     @DeleteMapping
-    public R<String> delete(@RequestParam List<Long> ids){
-        log.info("ids:{}",ids);
+    public R<String> delete(@RequestParam List<Long> ids) {
+        log.info("ids:{}", ids);
 
         setmealService.removeWithDish(ids);
         return R.success("套餐删除成功");
+    }
+
+    @GetMapping("/list")
+    public R<List<Setmeal>> list(Setmeal setmeal) {
+        LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(setmeal.getCategoryId() != null, Setmeal::getCategoryId, setmeal.getCategoryId());
+        queryWrapper.eq(setmeal.getStatus() != null, Setmeal::getStatus, setmeal.getStatus());
+        queryWrapper.orderByDesc(Setmeal::getUpdateTime);
+        List<Setmeal> list = setmealService.list(queryWrapper);
+
+        return R.success(list);
     }
 }
