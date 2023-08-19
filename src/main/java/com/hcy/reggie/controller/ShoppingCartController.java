@@ -3,6 +3,7 @@ package com.hcy.reggie.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.hcy.reggie.common.BaseContext;
 import com.hcy.reggie.common.R;
+import com.hcy.reggie.entity.SetmealDish;
 import com.hcy.reggie.entity.ShoppingCart;
 import com.hcy.reggie.service.ShoppingCartService;
 import lombok.extern.slf4j.Slf4j;
@@ -69,6 +70,37 @@ public class ShoppingCartController {
     }
 
     /**
+     * 减少购物车商品数量
+     * @param setmealDish
+     * @return
+     */
+    @PostMapping("/sub")
+    public R<String> sub(@RequestBody SetmealDish setmealDish) {
+        Long userId = BaseContext.getCurrentId();
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        if (setmealDish.getSetmealId() != null) {
+            Long setmealId = setmealDish.getSetmealId();
+            queryWrapper.eq(ShoppingCart::getSetmealId, setmealId).eq(ShoppingCart::getUserId, userId);
+        } else {
+            Long dishId = setmealDish.getDishId();
+            queryWrapper.eq(ShoppingCart::getDishId, dishId).eq(ShoppingCart::getUserId, userId);
+
+        }
+        ShoppingCart shoppingCart = shoppingCartService.getOne(queryWrapper);
+        if (shoppingCart != null) {
+            if (shoppingCart.getNumber() == 1) {
+                shoppingCartService.removeById(shoppingCart);
+            } else {
+                shoppingCart.setNumber(shoppingCart.getNumber() - 1);
+                shoppingCartService.updateById(shoppingCart);
+            }
+            return R.success("成功");
+        } else {
+            return R.error("购物车中不存在该商品");
+        }
+    }
+
+    /**
      * 查看购物车
      *
      * @return
@@ -87,9 +119,9 @@ public class ShoppingCartController {
     }
 
     @DeleteMapping("/clean")
-    public R<String> clean(){
+    public R<String> clean() {
         LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(ShoppingCart::getUserId,BaseContext.getCurrentId());
+        queryWrapper.eq(ShoppingCart::getUserId, BaseContext.getCurrentId());
 
         shoppingCartService.remove(queryWrapper);
 
