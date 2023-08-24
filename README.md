@@ -513,3 +513,69 @@ Maven
 #### 代码开发——准备工作
 
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692373014405-b9591955-b0b6-4846-a05f-9b79cbfbfa3c.png#averageHue=%23f2f0f3&clientId=u26168984-6fee-4&from=paste&height=136&id=ua4388301&originHeight=272&originWidth=670&originalType=binary&ratio=2&rotation=0&showTitle=false&size=165660&status=done&style=none&taskId=uce444944-2629-483c-a311-cce21b4b565&title=&width=335)
+
+
+## Linux项目部署
+
+### 手工部署
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692529186086-9b565208-7e31-47b2-998e-6ef11ecd0d52.png#averageHue=%23f8f7fb&clientId=u937faf35-688e-4&from=paste&height=281&id=u7bc6f57d&originHeight=561&originWidth=1090&originalType=binary&ratio=2&rotation=0&showTitle=false&size=228050&status=done&style=none&taskId=u04f70089-a885-42d0-828b-5458734a1bd&title=&width=545)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692529835032-a8db4c47-21d1-434d-9e89-a6047e8636b0.png#averageHue=%232c4667&clientId=u937faf35-688e-4&from=paste&height=212&id=u25f95cad&originHeight=424&originWidth=996&originalType=binary&ratio=2&rotation=0&showTitle=false&size=189928&status=done&style=none&taskId=u8ba43734-1822-41c6-9569-a2bcf538ce2&title=&width=498)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692529846617-a1e0955a-7a51-4270-bd23-295e98f06a51.png#averageHue=%232b4768&clientId=u937faf35-688e-4&from=paste&height=243&id=u1ea551f0&originHeight=486&originWidth=1232&originalType=binary&ratio=2&rotation=0&showTitle=false&size=502128&status=done&style=none&taskId=ue11234bd-672e-4193-8bbb-5c72341b392&title=&width=616)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692529994330-011d8f41-a0d8-4d20-b9c9-76c91456a587.png#averageHue=%23ebeaee&clientId=u937faf35-688e-4&from=paste&height=212&id=uc68f52f1&originHeight=424&originWidth=913&originalType=binary&ratio=2&rotation=0&showTitle=false&size=157027&status=done&style=none&taskId=u6dde76c5-ac40-4567-9ca2-740923b1681&title=&width=456.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692530213991-3e3b6ee6-9455-4829-8217-292c326d7be0.png#averageHue=%23d6dbd8&clientId=u937faf35-688e-4&from=paste&height=239&id=u7abd6308&originHeight=477&originWidth=1175&originalType=binary&ratio=2&rotation=0&showTitle=false&size=281643&status=done&style=none&taskId=u718ae730-87e6-4a3c-bff6-62e2d2e7d2e&title=&width=587.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692531403622-be40e019-dda8-4843-971a-bf93453f88cb.png#averageHue=%23263551&clientId=u937faf35-688e-4&from=paste&height=140&id=ud307df13&originHeight=279&originWidth=1144&originalType=binary&ratio=2&rotation=0&showTitle=false&size=185460&status=done&style=none&taskId=u5c2dd326-85f3-40fb-b545-53ac4cfffcd&title=&width=572)
+
+### 通过Shell脚本自动部署项目
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692534028878-3e63ba24-8020-4896-b4dd-e8c8d157c3d3.png#averageHue=%23fcfafc&clientId=u937faf35-688e-4&from=paste&height=244&id=ucd00a000&originHeight=487&originWidth=1203&originalType=binary&ratio=2&rotation=0&showTitle=false&size=135787&status=done&style=none&taskId=u4e93244c-47c6-4a9a-98de-0bb21c5ac08&title=&width=601.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692534187597-cdd46c9a-1a3c-4578-954b-1e4d1e6a3655.png#averageHue=%232e4c6f&clientId=u937faf35-688e-4&from=paste&height=229&id=ua42a98b5&originHeight=458&originWidth=1205&originalType=binary&ratio=2&rotation=0&showTitle=false&size=191713&status=done&style=none&taskId=ua1c50199-54d2-44b1-97d4-c97cb68a994&title=&width=602.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692534231175-ab8b240c-eea4-4bff-a260-9ce8fa6dc4bf.png#averageHue=%23b8c2d0&clientId=u937faf35-688e-4&from=paste&height=86&id=uff224d3f&originHeight=172&originWidth=1222&originalType=binary&ratio=2&rotation=0&showTitle=false&size=45958&status=done&style=none&taskId=u3ae010f3-6876-4453-b3a6-5283b72f56a&title=&width=611)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692537979854-88e95b6c-9487-4b69-97e6-9048751f99cb.png#averageHue=%23d7dacb&clientId=u937faf35-688e-4&from=paste&height=211&id=u18b19821&originHeight=422&originWidth=1213&originalType=binary&ratio=2&rotation=0&showTitle=false&size=213021&status=done&style=none&taskId=uf98b91a2-82a2-4ae8-bb30-d6426b65e47&title=&width=606.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692538788859-513c6e67-8d9b-4699-b81a-9d712b48d08b.png#averageHue=%23cfd3d0&clientId=u937faf35-688e-4&from=paste&height=114&id=u5845b836&originHeight=228&originWidth=1227&originalType=binary&ratio=2&rotation=0&showTitle=false&size=165529&status=done&style=none&taskId=u95438ead-64ed-4055-bbbb-fa637384a3e&title=&width=613.5)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692539219952-6099f869-815a-444b-a634-149cd1eba0be.png#averageHue=%2333425d&clientId=u937faf35-688e-4&from=paste&height=282&id=u715aefb6&originHeight=564&originWidth=1218&originalType=binary&ratio=2&rotation=0&showTitle=false&size=295194&status=done&style=none&taskId=ud2171a72-52ba-4b14-95b5-eec8fc44f36&title=&width=609)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692539892077-ac7945a6-ce55-4fc8-926e-44af5a1462db.png#averageHue=%23f7f5f7&clientId=u937faf35-688e-4&from=paste&height=265&id=u88c65362&originHeight=530&originWidth=1250&originalType=binary&ratio=2&rotation=0&showTitle=false&size=249910&status=done&style=none&taskId=u9a4f6511-0161-41f9-b141-a8812f4dac0&title=&width=625)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692540032018-6866acb8-8a4c-4fdb-a163-e4e39cfc21d1.png#averageHue=%23253653&clientId=u937faf35-688e-4&from=paste&height=248&id=u065c4ab6&originHeight=496&originWidth=981&originalType=binary&ratio=2&rotation=0&showTitle=false&size=243644&status=done&style=none&taskId=ufd4771a3-4719-48cc-a687-3c0e136d831&title=&width=490.5)
+云服务器可以跳过后面步骤
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692541337164-67dcb606-efcb-4b70-893b-d4e28417507e.png#averageHue=%23f1eff2&clientId=u937faf35-688e-4&from=paste&height=287&id=u33a0845e&originHeight=574&originWidth=1252&originalType=binary&ratio=2&rotation=0&showTitle=false&size=510856&status=done&style=none&taskId=ub8749c32-e308-4739-9b29-68eea9049b0&title=&width=626)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692541971498-ec28b396-e603-41a3-8652-1592f49ab077.png#averageHue=%23d0d2d9&clientId=u937faf35-688e-4&from=paste&height=178&id=u8d9ce699&originHeight=355&originWidth=976&originalType=binary&ratio=2&rotation=0&showTitle=false&size=154947&status=done&style=none&taskId=u34eeabb7-5da6-4793-aa9c-6f04fd7b2ab&title=&width=488)
+
+## Redis
+
+### Redis常用命令
+
+#### 字符串String操作命令
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692626135266-4707d0c6-47b7-46d0-af0a-b0fbb72aa067.png#averageHue=%23f1eff1&clientId=u69142cab-e8d0-4&from=paste&height=124&id=ub2c15d53&originHeight=247&originWidth=1099&originalType=binary&ratio=2&rotation=0&showTitle=false&size=118330&status=done&style=none&taskId=u53d47a63-65a7-4da6-aa7a-fef792ee883&title=&width=549.5)
+
+#### 哈希hash操作命令
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692626336811-542bf796-8af9-4ada-8917-70a32ade6951.png#averageHue=%23f2f0f2&clientId=u69142cab-e8d0-4&from=paste&height=262&id=u397bc849&originHeight=523&originWidth=1115&originalType=binary&ratio=2&rotation=0&showTitle=false&size=274002&status=done&style=none&taskId=u19f2deae-1570-481b-92a4-d8de56b4f05&title=&width=557.5)
+
+#### 列表list操作命令
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692626690169-512c8187-f4f5-4030-a082-83b57d0ddf89.png#averageHue=%23f3f1f4&clientId=u69142cab-e8d0-4&from=paste&height=240&id=wIG2d&originHeight=479&originWidth=1309&originalType=binary&ratio=2&rotation=0&showTitle=false&size=260319&status=done&style=none&taskId=ua8aba36d-0daa-4625-a1ae-7aa093a4a9c&title=&width=654.5)
+
+#### 集合set操作命令
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692628229522-67e6d3fe-c646-423d-a4b7-025ffc005b9d.png#averageHue=%23f4f2f4&clientId=u69142cab-e8d0-4&from=paste&height=291&id=uecc468f7&originHeight=581&originWidth=1192&originalType=binary&ratio=2&rotation=0&showTitle=false&size=292246&status=done&style=none&taskId=u48d9fe24-52ca-4f0f-852c-09546651c69&title=&width=596)
+
+#### 有序集合sorted set操作命令
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692628521058-10740a33-4f68-476a-b8ca-def5da82f876.png#averageHue=%23f3f1f3&clientId=u69142cab-e8d0-4&from=paste&height=308&id=u8cd73273&originHeight=616&originWidth=1336&originalType=binary&ratio=2&rotation=0&showTitle=false&size=328704&status=done&style=none&taskId=uf3937d46-c60f-41eb-bd47-f97596dd5b4&title=&width=668)
+
+### 在Java中操作Redis
+
+#### 介绍
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692709661674-41e5844e-6e0b-41cb-9d03-dd939ca0edca.png#averageHue=%23f8f6f8&clientId=ub14ebeaf-a17d-4&from=paste&height=174&id=uf3505994&originHeight=348&originWidth=1277&originalType=binary&ratio=2&rotation=0&showTitle=false&size=106007&status=done&style=none&taskId=u5543806d-5c2e-4aba-b8f6-a390246fb12&title=&width=638.5)
+
+#### Jedis
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692710009352-6cc35e9b-8b8c-4064-a1cb-deccb1a5e9ba.png#averageHue=%23f9f7f9&clientId=ub14ebeaf-a17d-4&from=paste&height=264&id=udc0ef73e&originHeight=528&originWidth=503&originalType=binary&ratio=2&rotation=0&showTitle=false&size=110999&status=done&style=none&taskId=ud9e84ce9-522d-4516-8b7e-d2a485e56b8&title=&width=251.5)
+
+#### Spring Data Redis
+
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692712700332-62b7b6e0-a272-4aa9-a00b-c93fd8619f66.png#averageHue=%23f9f7f9&clientId=ub14ebeaf-a17d-4&from=paste&height=135&id=u717641a6&originHeight=270&originWidth=952&originalType=binary&ratio=2&rotation=0&showTitle=false&size=125592&status=done&style=none&taskId=u95302d4a-2ee5-4e1d-af28-9058e1d9ebd&title=&width=476)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/38624107/1692713145705-440323c9-86ac-4423-9088-4a1a30e98aab.png#averageHue=%23f3f1f3&clientId=ub14ebeaf-a17d-4&from=paste&height=176&id=ud1632a13&originHeight=352&originWidth=1311&originalType=binary&ratio=2&rotation=0&showTitle=false&size=186691&status=done&style=none&taskId=u4f424e09-5146-46b5-84a9-f2ad75bc9fa&title=&width=655.5)
+
