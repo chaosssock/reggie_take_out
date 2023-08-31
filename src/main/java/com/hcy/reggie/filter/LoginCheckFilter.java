@@ -46,7 +46,7 @@ public class LoginCheckFilter implements Filter {
                 "/user/sendMsg",
                 "/user/login",
                 "/doc.html",
-                "/web.jars/**",
+                "/webjars/**",
                 "/swagger-resources",
                 "/v2/api-docs"
         };
